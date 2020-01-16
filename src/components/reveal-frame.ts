@@ -22,8 +22,21 @@ export default class RevealFrame extends LitElement {
       :host {
         display: block;
       }
+      .container {
+        position: relative;
+      }
       .spoiler {
-        background-color: rgba(0,0,32,0.7);
+        display: flex;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(0,0,32,0.8);
+        color: rgba(239,239,255,0.8);
+        overflow: hidden;
+      }
+      .spoiler-inner {
+        text-align: center;
       }
     `;
   }
@@ -38,23 +51,30 @@ export default class RevealFrame extends LitElement {
   }
 
   render() {
+    const cssWidth = cssDimension(this.width),
+          cssHeight = cssDimension(this.height),
+          containerStyle = `width:${cssWidth};height:${cssHeight};`;
+
     if (this.revealed) {
       return html`
-        <iframe
-          width="${this.width}"
-          height="${this.height}"
-          src="${this.src}"
-          frameborder="0"
-          allow="${this.allow}"
-        ></iframe>
+        <div class="container">
+          <iframe
+            width="${this.width}"
+            height="${this.height}"
+            src="${this.src}"
+            frameborder="0"
+            allow="${this.allow}"
+          ></iframe>
+        </div>
       `;
     } else {
-      const cssWidth = cssDimension(this.width),
-            cssHeight = cssDimension(this.height),
-      spoilerStyle = `width:${cssWidth};height:${cssHeight};`;
       return html`
-        <div class="spoiler" style="${spoilerStyle}" @click="${() => this.reveal()}">
-          <slot></slot>
+        <div class="container" style="${containerStyle}">
+          <div class="spoiler" @click="${() => this.reveal()}">
+            <div class="spoiler-inner">
+              <slot></slot>
+            </div>
+          </div>
         </div>
       `;
     }
