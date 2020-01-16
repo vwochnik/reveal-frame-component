@@ -24,6 +24,7 @@ export default class RevealFrame extends LitElement {
       }
       .container {
         position: relative;
+        background-color: var(--reveal-frame-background, rgba(225,225,225,0.3));
       }
       .spoiler {
         display: flex;
@@ -31,8 +32,8 @@ export default class RevealFrame extends LitElement {
         height: 100%;
         align-items: center;
         justify-content: center;
-        background-color: rgba(0,0,32,0.8);
-        color: rgba(239,239,255,0.8);
+        background-color: var(--spoiler-background, rgba(0,0,32,0.8));
+        color: var(--spoiler-color, rgba(239,239,255,0.8));
         overflow: hidden;
       }
       .spoiler-inner {
@@ -57,7 +58,7 @@ export default class RevealFrame extends LitElement {
 
     if (this.revealed) {
       return html`
-        <div class="container">
+        <div class="container" style="${containerStyle}">
           <iframe
             width="${this.width}"
             height="${this.height}"
