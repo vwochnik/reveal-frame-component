@@ -1,7 +1,7 @@
 {
   "name": "reveal-frame-component",
   "version": "0.0.1",
-  "description": "A simple web component adding a consent to iframes.",
+  "description": "A privacy-minded iFrame placeholder component.",
   "main": "dist/bundle.js",
   "scripts": {
     "build": "webpack",
