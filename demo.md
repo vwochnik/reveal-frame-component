@@ -21,16 +21,16 @@ title: Reveal Frame Component Demo
 ## YouTube
 
 <div class="demo-container" style="width:560px">
-    <reveal-frame width="560" height="315" src="https://www.youtube.com/embed/4YxTa1AUqps" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" >
+    <reveal-frame width="560" height="315" src="https://www.youtube.com/embed/4YxTa1AUqps" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" >
       <div class="play-button"></div>
-      <p>By clicking, data will be sent to SoundCloud.</p>
+      <p>By clicking, data will be sent to YouTube.</p>
     </reveal-frame>
 </div>
 
 ```
-<reveal-frame width="560" height="315" src="https://www.youtube.com/embed/4YxTa1AUqps" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" >
+<reveal-frame width="560" height="315" src="https://www.youtube.com/embed/4YxTa1AUqps" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" >
   <div class="play-button"></div>
-  <p>By clicking, data will be sent to SoundCloud.</p>
+  <p>By clicking, data will be sent to YouTube.</p>
 </reveal-frame>
 ```
 
@@ -39,13 +39,13 @@ title: Reveal Frame Component Demo
 <div class="demo-container" style="width:640px">
 	<reveal-frame src="https://player.vimeo.com/video/55904250?title=0&byline=0&portrait=0" width="640" height="360" allow="autoplay; fullscreen">
     <div class="play-button"></div>
-    <p>By clicking, data will be sent to SoundCloud.</p>
+    <p>By clicking, data will be sent to Vimeo.</p>
 	</reveal-frame>
 </div>
 
 ```
 <reveal-frame src="https://player.vimeo.com/video/55904250?title=0&byline=0&portrait=0" width="640" height="360" allow="autoplay; fullscreen">
   <div class="play-button"></div>
-  <p>By clicking, data will be sent to SoundCloud.</p>
+  <p>By clicking, data will be sent to Vimeo.</p>
 </reveal-frame>
 ```
