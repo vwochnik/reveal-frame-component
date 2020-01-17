@@ -46,6 +46,14 @@
       .demo-container {
         margin: 0.5rem auto 1rem;
       }
+      .play-button {
+        height: 0px;
+        width: 0;
+        border-left: 28px solid rgba(239, 239, 255, 0.8);;
+        border-top: 14px solid transparent;
+        border-bottom: 14px solid transparent;
+        margin: 0.5rem auto 1rem;
+      }
       @media (max-width: 767px) {
         .markdown-body {
           padding: 15px;
@@ -143,21 +151,5 @@ import 'reveal-frame-component';
 
       </div>
     </div>
-    <script type="text/javascript">
-      const boxes = document.querySelectorAll("water-box");
-      console.info(boxes);
-      function animate() {
-        for (let i = 0; i < boxes.length; ++i) {
-          const box = boxes[i];
-          const increment = 1+i;
-          const oldValue = box.value;
-          const newValue = (oldValue + increment) % 100;
-          box.value = newValue || 0;
-        }
-        setTimeout(() => requestAnimationFrame(animate), 50);
-        ;
-      }
-      animate();
-    </script>
   </body>
 </html>

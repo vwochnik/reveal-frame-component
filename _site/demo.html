@@ -46,6 +46,14 @@
       .demo-container {
         margin: 0.5rem auto 1rem;
       }
+      .play-button {
+        height: 0px;
+        width: 0;
+        border-left: 28px solid rgba(239, 239, 255, 0.8);;
+        border-top: 14px solid transparent;
+        border-bottom: 14px solid transparent;
+        margin: 0.5rem auto 1rem;
+      }
       @media (max-width: 767px) {
         .markdown-body {
           padding: 15px;
@@ -64,13 +72,13 @@
 
 <div class="demo-container" style="width:100%">
 	<reveal-frame width="100%" height="166" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/44739720&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true">
-	  <p><b>Click to play.</b></p>
+    <div class="play-button"></div>
 	  <p>By clicking, data will be sent to SoundCloud.</p>
 	</reveal-frame>
 </div>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;reveal-frame width="100%" height="166" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/44739720&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true"&gt;
-  &lt;p&gt;&lt;b&gt;Click to play.&lt;/b&gt;&lt;/p&gt;
+  &lt;div class="play-button"&gt;&lt;/div&gt;
   &lt;p&gt;By clicking, data will be sent to SoundCloud.&lt;/p&gt;
 &lt;/reveal-frame&gt;
 </code></pre></div></div>
@@ -79,14 +87,14 @@
 
 <div class="demo-container" style="width:560px">
     <reveal-frame width="560" height="315" src="https://www.youtube.com/embed/4YxTa1AUqps" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture">
-      <p><b>Click to play.</b></p>
-      <p>By clicking, data will be sent to YouTube.</p>
+      <div class="play-button"></div>
+      <p>By clicking, data will be sent to SoundCloud.</p>
     </reveal-frame>
 </div>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;reveal-frame width="560" height="315" src="https://www.youtube.com/embed/4YxTa1AUqps" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" &gt;
-  &lt;p&gt;&lt;b&gt;Click to play.&lt;/b&gt;&lt;/p&gt;
-  &lt;p&gt;By clicking, data will be sent to YouTube.&lt;/p&gt;
+  &lt;div class="play-button"&gt;&lt;/div&gt;
+  &lt;p&gt;By clicking, data will be sent to SoundCloud.&lt;/p&gt;
 &lt;/reveal-frame&gt;
 </code></pre></div></div>
 
@@ -94,34 +102,18 @@
 
 <div class="demo-container" style="width:640px">
 	<reveal-frame src="https://player.vimeo.com/video/55904250?title=0&amp;byline=0&amp;portrait=0" width="640" height="360" allow="autoplay; fullscreen">
-      <p><b>Click to play.</b></p>
-      <p>By clicking, data will be sent to Vimeo.</p>
+    <div class="play-button"></div>
+    <p>By clicking, data will be sent to SoundCloud.</p>
 	</reveal-frame>
 </div>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;reveal-frame src="https://player.vimeo.com/video/55904250?title=0&amp;byline=0&amp;portrait=0" width="640" height="360" allow="autoplay; fullscreen"&gt;
-  &lt;p&gt;&lt;b&gt;Click to play.&lt;/b&gt;&lt;/p&gt;
-  &lt;p&gt;By clicking, data will be sent to Vimeo.&lt;/p&gt;
+  &lt;div class="play-button"&gt;&lt;/div&gt;
+  &lt;p&gt;By clicking, data will be sent to SoundCloud.&lt;/p&gt;
 &lt;/reveal-frame&gt;
 </code></pre></div></div>
 
       </div>
     </div>
-    <script type="text/javascript">
-      const boxes = document.querySelectorAll("water-box");
-      console.info(boxes);
-      function animate() {
-        for (let i = 0; i < boxes.length; ++i) {
-          const box = boxes[i];
-          const increment = 1+i;
-          const oldValue = box.value;
-          const newValue = (oldValue + increment) % 100;
-          box.value = newValue || 0;
-        }
-        setTimeout(() => requestAnimationFrame(animate), 50);
-        ;
-      }
-      animate();
-    </script>
   </body>
 </html>
