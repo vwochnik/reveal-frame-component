@@ -1,0 +1,80 @@
+I"H
+<blockquote>
+  <p>A privacy-minded iFrame placeholder component.</p>
+</blockquote>
+
+<p>This component will hide iframes behind a placeholder until the user clicks on it. No request is made until the user clicks on the placeholder. This way, it is possible to ask for consent before an external iframe is being loaded.</p>
+
+<h2 id="installation">Installation</h2>
+
+<p>You can use NPM to install this component.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm i --save reveal-frame-component
+</code></pre></div></div>
+
+<h2 id="usage">Usage</h2>
+
+<p>To use this web component in your project you can utilize one of the following styles of syntax.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/* In an existing module / web component */
+import 'reveal-frame-component';
+/* At top of an application */
+&lt;script type="module" src="node_modules/reveal-frame-component/dist/bundle.js"&gt;&lt;/script&gt;
+/* Alternatives for top of application */
+&lt;script type="module"&gt;
+  import 'reveal-frame-component';
+&lt;/script&gt;
+</code></pre></div></div>
+
+<p>Now, you can replace <code class="highlighter-rouge">iframe</code> tags with <code class="highlighter-rouge">reveal-frame</code> and a placeholder text.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;reveal-frame width="560" height="315" src="https://www.youtube.com/embed/4YxTa1AUqps" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" &gt;
+  &lt;p&gt;&lt;b&gt;Click to play.&lt;/b&gt;&lt;/p&gt;
+  &lt;p&gt;By clicking, data will be sent to YouTube.&lt;/p&gt;
+&lt;/reveal-frame&gt;
+</code></pre></div></div>
+
+<h2 id="properties">Properties</h2>
+
+<table>
+  <tr>
+    <th>Property</th>
+    <th>Attribute</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Example</th>
+  </tr>
+  <tr>
+    <td><code>width</code></td>
+    <td><code>width</code></td>
+    <td>String</td>
+    <td>Width in pixels or percentual value.</td>
+    <td><code>100%</code></td>
+  </tr>
+  <tr>
+    <td><code>height</code></td>
+    <td><code>height</code></td>
+    <td>String</td>
+    <td>Height in pixels.</td>
+    <td><code>160</code></td>
+  </tr>
+  <tr>
+    <td><code>src</code></td>
+    <td><code>src</code></td>
+    <td>String</td>
+    <td>IFrame source URL.</td>
+    <td><code>http://example.com/</code></td>
+  </tr>
+  <tr>
+    <td><code>allow</code></td>
+    <td><code>allow</code></td>
+    <td>String</td>
+    <td>Feature policy for iFrame</td>
+    <td><code>fullscreen</code></td>
+  </tr>
+</table>
+
+<h2 id="license">License</h2>
+
+<p>MIT</p>
+:ET

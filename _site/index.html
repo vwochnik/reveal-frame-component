@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Waterbox Component</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="github-markdown.css">
+    <script type="module" src="https://cdn.jsdelivr.net/gh/vwochnik/reveal-frame-component@0.0.1/dist/bundle.js"></script>
+<style>
+</style>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        color: #303034;
+        background-color: #ebebef;
+        font-family: sans-serif;
+        margin: 0;
+      }
+      .header {
+        background: #404048;
+        padding: 1rem 0;
+        color: #a0a0a8;
+      }
+
+      .github {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+      h1 {
+        text-align: center;
+      }
+      .body-wrapper {
+        background-color: #e0e0e8;
+      }
+      .markdown-body {
+        box-sizing: border-box;
+        min-width: 200px;
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 45px;
+      }
+      @media (max-width: 767px) {
+        .markdown-body {
+          padding: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <a class="github" href="https://github.com/vwochnik/reveal-frame-component"><img width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_white_ffffff.png?resize=149%2C149" alt="Fork me on GitHub"></a>
+      <h1>Reveal Frame Component</h1>
+    </div>
+    <div class="body-wrapper">
+      <div class="markdown-body">
+        <blockquote>
+  <p>A privacy-minded iFrame placeholder component.</p>
+</blockquote>
+
+<p>This component will hide iframes behind a placeholder until the user clicks on it. No request is made until the user clicks on the placeholder. This way, it is possible to ask for consent before an external iframe is being loaded.</p>
+
+<h2 id="installation">Installation</h2>
+
+<p>You can use NPM to install this component.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm i --save reveal-frame-component
+</code></pre></div></div>
+
+<h2 id="usage">Usage</h2>
+
+<p>To use this web component in your project you can utilize one of the following styles of syntax.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/* In an existing module / web component */
+import 'reveal-frame-component';
+/* At top of an application */
+&lt;script type="module" src="node_modules/reveal-frame-component/dist/bundle.js"&gt;&lt;/script&gt;
+/* Alternatives for top of application */
+&lt;script type="module"&gt;
+  import 'reveal-frame-component';
+&lt;/script&gt;
+</code></pre></div></div>
+
+<p>Now, you can replace <code class="highlighter-rouge">iframe</code> tags with <code class="highlighter-rouge">reveal-frame</code> and a placeholder text.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;reveal-frame width="560" height="315" src="https://www.youtube.com/embed/4YxTa1AUqps" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" &gt;
+  &lt;p&gt;&lt;b&gt;Click to play.&lt;/b&gt;&lt;/p&gt;
+  &lt;p&gt;By clicking, data will be sent to YouTube.&lt;/p&gt;
+&lt;/reveal-frame&gt;
+</code></pre></div></div>
+
+<h2 id="properties">Properties</h2>
+
+<table>
+  <tr>
+    <th>Property</th>
+    <th>Attribute</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Example</th>
+  </tr>
+  <tr>
+    <td><code>width</code></td>
+    <td><code>width</code></td>
+    <td>String</td>
+    <td>Width in pixels or percentual value.</td>
+    <td><code>100%</code></td>
+  </tr>
+  <tr>
+    <td><code>height</code></td>
+    <td><code>height</code></td>
+    <td>String</td>
+    <td>Height in pixels.</td>
+    <td><code>160</code></td>
+  </tr>
+  <tr>
+    <td><code>src</code></td>
+    <td><code>src</code></td>
+    <td>String</td>
+    <td>IFrame source URL.</td>
+    <td><code>http://example.com/</code></td>
+  </tr>
+  <tr>
+    <td><code>allow</code></td>
+    <td><code>allow</code></td>
+    <td>String</td>
+    <td>Feature policy for iFrame</td>
+    <td><code>fullscreen</code></td>
+  </tr>
+</table>
+
+<h2 id="license">License</h2>
+
+<p>MIT</p>
+
+      </div>
+    </div>
+    <script type="text/javascript">
+      const boxes = document.querySelectorAll("water-box");
+      console.info(boxes);
+      function animate() {
+        for (let i = 0; i < boxes.length; ++i) {
+          const box = boxes[i];
+          const increment = 1+i;
+          const oldValue = box.value;
+          const newValue = (oldValue + increment) % 100;
+          box.value = newValue || 0;
+        }
+        setTimeout(() => requestAnimationFrame(animate), 50);
+        ;
+      }
+      animate();
+    </script>
+  </body>
+</html>

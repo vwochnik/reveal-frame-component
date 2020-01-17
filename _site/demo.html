@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Waterbox Component</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="github-markdown.css">
+    <script type="module" src="https://cdn.jsdelivr.net/gh/vwochnik/reveal-frame-component@0.0.1/dist/bundle.js"></script>
+<style>
+</style>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        color: #303034;
+        background-color: #ebebef;
+        font-family: sans-serif;
+        margin: 0;
+      }
+      .header {
+        background: #404048;
+        padding: 1rem 0;
+        color: #a0a0a8;
+      }
+
+      .github {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+      h1 {
+        text-align: center;
+      }
+      .body-wrapper {
+        background-color: #e0e0e8;
+      }
+      .markdown-body {
+        box-sizing: border-box;
+        min-width: 200px;
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 45px;
+      }
+      @media (max-width: 767px) {
+        .markdown-body {
+          padding: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <a class="github" href="https://github.com/vwochnik/reveal-frame-component"><img width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_white_ffffff.png?resize=149%2C149" alt="Fork me on GitHub"></a>
+      <h1>Reveal Frame Component Demo</h1>
+    </div>
+    <div class="body-wrapper">
+      <div class="markdown-body">
+        <p>Test</p>
+      </div>
+    </div>
+    <script type="text/javascript">
+      const boxes = document.querySelectorAll("water-box");
+      console.info(boxes);
+      function animate() {
+        for (let i = 0; i < boxes.length; ++i) {
+          const box = boxes[i];
+          const increment = 1+i;
+          const oldValue = box.value;
+          const newValue = (oldValue + increment) % 100;
+          box.value = newValue || 0;
+        }
+        setTimeout(() => requestAnimationFrame(animate), 50);
+        ;
+      }
+      animate();
+    </script>
+  </body>
+</html>
