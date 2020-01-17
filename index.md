@@ -7,6 +7,8 @@ title: Reveal Frame Component
 
 This component will hide iframes behind a placeholder until the user clicks on it. No request is made until the user clicks on the placeholder. This way, it is possible to ask for consent before an external iframe is being loaded.
 
+[Demo](https://vwochnik.github.io/reveal-frame-component/demo.html)
+
 ## Installation
 
 You can use NPM to install this component.
